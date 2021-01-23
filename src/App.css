@@ -5,6 +5,8 @@
 .App {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   cursor: default;
+  width: 100vw;
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;

@@ -38,11 +38,9 @@ export default function Navbarr() {
               duration={200}
               label="Home"
               icon={<HomeRoundedIcon />}
-              
             />
             <BottomNavigationAction
               component={Link}
-
               activeClass="Mui-selected"
               to="about"
               spy={true}
@@ -52,7 +50,6 @@ export default function Navbarr() {
               underline="none"
               label="About"
               icon={<PersonRoundedIcon />}
-              
             />
             <BottomNavigationAction
               component={Link}
@@ -65,7 +62,6 @@ export default function Navbarr() {
               underline="none"
               label="Projects"
               icon={<LaptopChromebookRoundedIcon />}
-              
             />
             <BottomNavigationAction
               component={Link}

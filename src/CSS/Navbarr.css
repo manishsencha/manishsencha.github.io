@@ -1,3 +1,13 @@
 .MuiBottomNavigation-root {
     background-color: #888888;
 }
+.MuiAppBar-positionFixed {
+    text-align: center;
+    width: 100vw !important;
+}
+@media(max-width: 480px) {
+    .MuiAppBar-positionFixed {
+        text-align: center;
+        width: 100vw !important;
+    }
+}
