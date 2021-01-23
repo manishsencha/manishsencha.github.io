@@ -1,0 +1,29 @@
+ 
+  #resume {
+    height: 2000px;
+    background-color: #888888;
+  }
+  #resume .heading {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue;
+  }
+  #resume .bar {
+    position: relative;
+    display: inline-block;
+    height: 1px;
+    width: 175px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+  }
+  #resume .bar-second {
+    height: 3px;
+    width: 60px;
+    background-color: #f2c640;
+  }
+  

@@ -1,0 +1,11 @@
+:root {
+  scroll-behavior: smooth;
+}
+
+.App {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  cursor: default;
+}
+a {
+  text-decoration: none;
+}

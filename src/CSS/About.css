@@ -1,0 +1,77 @@
+#about {
+  /* height: 2000px; */
+  background-color: #444444;
+  color: aliceblue;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.heading span {
+  margin: 0;
+  /* border-bottom: 2px solid #ddffee; */
+  font-size: 45px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+#about .heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#about .bar {
+  position: relative;
+  display: inline-block;
+  height: 1px;
+  width: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+}
+#about .bar-second {
+  height: 3px;
+  width: 50px;
+  background-color: #f2c640;
+}
+.about {
+  padding: 10px;
+  max-width: 800px;
+}
+.description {
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+.my-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.myimage {
+  max-height: 400px;
+  max-width: 400px;
+}
+.image-head-text {
+  color: #dac177;
+  font-size : 23px;
+  font-weight: 600;
+  letter-spacing: 1px;  
+}
+.image-sub-text {
+  color: #d6c799;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+ul {
+  list-style-type: none;
+}
+.points{
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  letter-spacing: 1px;
+  padding-top: 10px;
+}
+.arrow-right {
+  fill: #f2c640 !important;
+}
