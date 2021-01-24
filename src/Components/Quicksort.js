@@ -1,25 +1,35 @@
-import React from "react";
+import { Button } from "@material-ui/core";
+import React, { useState } from "react";
 
 import "../CSS/Quicksort.css";
 import Bar from "./Bar";
 
 export default function Quicksort() {
-  var arr = new Array(50);
-  for (var i = 0; i < 50; ++i) {
-    arr[i] = Math.floor(Math.random() * Math.floor(400));
-  }
+  const [arr] = useState(
+    [...Array(50)].map(() => Math.floor(Math.random() * Math.floor(400)))
+  );
 
-  console.log(arr);
-  arr.sort(function (a, b) {
-    return a - b;
-  });
-  console.log(arr);
-  const mp = arr.map((num, idx) => {
-    return <Bar key={idx} height={num} />;
-  });
+  const [st, changeSt] = useState(false);
+
   return (
     <>
-      <div className="layout">{mp}</div>
+      <Button variant="contained" onClick={() => changeSt(true)}>
+        Sort
+      </Button>
+      <Button variant="contained" onCanPlay={() => changeSt(false)}>
+        Reset
+      </Button>
+      <div className="layout">
+        {st
+          ? arr
+              .sort((a, b) => a - b)
+              .map((num, idx) => {
+                return <Bar key={idx} height={num} />;
+              })
+          : arr.map((num, idx) => {
+              return <Bar key={idx} height={num} />;
+            })}
+      </div>
     </>
   );
 }
