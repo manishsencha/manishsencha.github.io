@@ -4,16 +4,18 @@ import '../CSS/Bar.css';
 
 export default function Bar({height}) {
     const useStyles = makeStyles({
-        root:{
+        bar:{
+            fontSize:10,
             height:height,
-            width:10,
+            width:20,
             backgroundColor:"red",
+            color:"white"
         }
     });
     const classes = useStyles();
     return (
         <>
-            <div className={classes.root} >
+            <div className={classes.bar} >
                 {height}
             </div>
         </>
