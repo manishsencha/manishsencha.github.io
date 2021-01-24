@@ -16,7 +16,7 @@ export default function Quicksort() {
     return a - b;
   });
   console.log(arr);
-  const mp = arr.map((num) => {return(<Bar key={num} height={num} />)})
+  const mp = arr.map((num, idx) => {return(<Bar key={idx} height={num} />)})
   return (
     <>
       <div className="layout">
