@@ -1,5 +1,6 @@
 import React from "react";
 import "../CSS/Projects.css";
+import Quicksort from "./Quicksort";
 
 export default function Projects() {
   return (
@@ -11,7 +12,7 @@ export default function Projects() {
             <span className="bar-second"></span>
           </span>
         </div>
-        
+        <Quicksort />
       </section>
     </>
   );

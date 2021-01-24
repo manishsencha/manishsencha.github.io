@@ -6,14 +6,10 @@
   text-align: center;
   display: flex;
   justify-content: space-around;
-  width: 100vw;
+  
   
 }
-@media(max-width: 450px) {
-  .description{
-    padding-right: 25px;
-  }
-}
+
 .heading span {
   margin: 0;
   /* border-bottom: 2px solid #ddffee; */
@@ -44,7 +40,7 @@
   background-color: #f2c640;
 }
 .about {
-  width: 100vw;
+ 
   padding: 10px;
   max-width: 800px;
 }
@@ -53,6 +49,7 @@
   font-size: 20px;
   letter-spacing: 1px;
   margin: 20px;
+  
 }
 .my-details {
   display: flex;
@@ -67,11 +64,13 @@
   color: #dac177;
   font-size : 23px;
   font-weight: 600;
-  letter-spacing: 1px;  
+  letter-spacing: 1px; 
+  padding:0px 10px 0px 10px; 
 }
 .image-sub-text {
   color: #d6c799;
   font-size: 20px;
+  padding:0px 10px 0px 10px; 
   letter-spacing: 0.5px;
   padding: 10px;
 }
@@ -88,6 +87,11 @@ ul {
   word-wrap: break-word;
   border-top: 1px solid aliceblue;
   border-bottom: 1px solid aliceblue;
+}
+@media(max-width: 500px) {
+  .points {
+    font-size: 16px;
+  }
 }
 .arrow-right {
   fill: #f2c640 !important;
