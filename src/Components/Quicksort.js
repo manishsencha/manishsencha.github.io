@@ -27,6 +27,10 @@ export default function Quicksort() {
     [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
   );
   const [st, changeSt] = useState(false);
+  const changevalue = (val) => {
+      changeVal(val);
+      setArr(  [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400))));
+  }
   return (
     <>
       <FormControlLabel
@@ -59,7 +63,7 @@ export default function Quicksort() {
           min={1}
           max={50}
           valueLabelDisplay="auto"
-          onChange ={(event, value)=>changeVal(value)}
+          onChange ={(event, value) => changevalue(value)}
         />
       </div>
       <div className="layout">
