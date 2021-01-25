@@ -24,7 +24,7 @@ export default function Quicksort() {
   const classes = useStyles();
   const [val, changeVal ] = useState(10);
   const [arr, setArr] = useState(
-    [...Array(10)].map(() => Math.floor(Math.random() * Math.floor(400)))
+    [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
   );
   const [st, changeSt] = useState(false);
   return (
