@@ -1,24 +1,31 @@
-import { Button } from "@material-ui/core";
-import React, { useState } from "react";
+import { Button, Checkbox, FormControlLabel } from "@material-ui/core";
+import React, { useState, useEffect } from "react";
 
 import "../CSS/Quicksort.css";
 import Bar from "./Bar";
 
 export default function Quicksort() {
-  const [arr] = useState(
-    [...Array(50)].map(() => Math.floor(Math.random() * Math.floor(400)))
+  const [arr, setArr] = useState(
+    [...Array(10)].map(() => Math.floor(Math.random() * Math.floor(400)))
   );
-
   const [st, changeSt] = useState(false);
-
   return (
     <>
-      <Button variant="contained" onClick={() => changeSt(true)}>
-        Sort
-      </Button>
-      <Button variant="contained" onCanPlay={() => changeSt(false)}>
+    <FormControlLabel
+      control={<Checkbox onChange={()=> changeSt(!st)} />} label="Sort"/>
+      <Button
+        variant="contained"
+        onClick={() =>
+          setArr(
+            [...Array(10)].map(() =>
+              Math.floor(Math.random() * Math.floor(400))
+            )
+          )
+        }
+      >
         Reset
       </Button>
+
       <div className="layout">
         {st
           ? arr
