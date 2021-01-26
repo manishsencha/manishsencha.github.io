@@ -9,3 +9,9 @@
     padding: 10px;
     border: 2px solid #000000;
 }
+.controls-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

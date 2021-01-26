@@ -1,12 +1,5 @@
-import {
-  Button,
-  Checkbox,
-  FormControlLabel,
-  makeStyles,
-  Slider,
-  Typography,
-} from "@material-ui/core";
-import React, { useState, useEffect } from "react";
+import { Button, makeStyles, Slider, Typography } from "@material-ui/core";
+import React, { useState } from "react";
 
 import "../CSS/Quicksort.css";
 import Bar from "./Bar";
@@ -18,64 +11,60 @@ const useStyles = makeStyles({
 });
 
 function valuetext(value) {
-  return `${value}C`
+  return `${value}`;
 }
 export default function Quicksort() {
   const classes = useStyles();
-  const [val, changeVal ] = useState(10);
+  const [val, changeVal] = useState(10);
   const [arr, setArr] = useState(
     [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
   );
-  const [st, changeSt] = useState(false);
+
   const changevalue = (val) => {
-      changeVal(val);
-      setArr(  [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400))));
-  }
+    changeVal(val);
+    setArr(
+      [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
+    );
+  };
   return (
     <>
-      <FormControlLabel
-        control={<Checkbox onChange={() => changeSt(!st)} />}
-        label="Sort"
-      />
-      <Button
-        variant="contained"
-        onClick={() =>
-          setArr(
-            [...Array(val)].map(() =>
-              Math.floor(Math.random() * Math.floor(400))
+      <div className="controls-layout">
+        <Button variant="contained" onClick={() => setArr(() => arr.sort((a, b) => a- b).map((num) => num))}>
+          SORT
+        </Button>
+        <Button
+          variant="contained"
+          onClick={() =>
+            setArr(
+              [...Array(val)].map(() =>
+                Math.floor(Math.random() * Math.floor(400))
+              )
             )
-          )
-        }
-      >
-    
-        Reset
-      </Button>
-      <div className={classes.root}>
-        <Typography id="discrete-slider-small-steps" gutterBottom>
-          Small steps
-        </Typography>
-        <Slider
-          defaultValue={val}
-          getAriaValueText={valuetext}
-          aria-labelledby="discrete-slider-small-steps"
-          step={1}
-          marks
-          min={1}
-          max={50}
-          valueLabelDisplay="auto"
-          onChange ={(event, value) => changevalue(value)}
-        />
+          }
+        >
+          Reset
+        </Button>
+        <div className={classes.root}>
+          <Typography id="discrete-slider-small-steps" gutterBottom>
+            Set array length
+          </Typography>
+          <Slider
+            defaultValue={val}
+            getAriaValueText={valuetext}
+            aria-labelledby="discrete-slider-small-steps"
+            step={1}
+            marks
+            min={1}
+            max={50}
+            valueLabelDisplay="auto"
+            onChange={(event, value) => changevalue(value)}
+          />
+        </div>
       </div>
       <div className="layout">
-        {st
-          ? arr
-              .sort((a, b) => a - b)
-              .map((num, idx) => {
-                return <Bar key={idx} height={num} />;
-              })
-          : arr.map((num, idx) => {
-              return <Bar key={idx} height={num} />;
-            })}
+        {arr.map((num, idx) => {
+          return <Bar key={idx} height={num} />;
+        })}
       </div>
     </>
   );
