@@ -26,10 +26,22 @@ export default function Quicksort() {
       [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
     );
   };
+  const qsort = () => {
+    for(var i=0; i<arr.length; ++i) {
+      for (let j = 0; j < arr.length; j++) {
+        if(arr[i]-arr[j] < 0){
+          var temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+          setArr(() => arr.map((num)=> num ))
+        } 
+      }
+    }
+  }
   return (
     <>
       <div className="controls-layout">
-        <Button variant="contained" onClick={() => setArr(() => arr.sort((a, b) => a- b).map((num) => num))}>
+        <Button variant="contained" onClick={qsort}>
           SORT
         </Button>
         <Button
