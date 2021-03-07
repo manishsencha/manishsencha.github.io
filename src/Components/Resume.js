@@ -17,7 +17,7 @@ export default function Resume() {
           </span>
         </div>
         <div className="resume-container">
-          <Document file={pdf}>
+          <Document className="doc-cont" file={pdf}>
             <Page pageNumber={1} />
           </Document>
         </div>
