@@ -1,7 +1,8 @@
  
   #resume {
-    height: 2000px;
+    /* height: 2000px; */
     background-color: #888888;
+    padding-bottom: 30vh;
   }
   #resume .heading {
     padding-top: 10px;
@@ -10,6 +11,7 @@
     justify-content: center;
     align-items: center;
     color: aliceblue;
+    margin-bottom: 20px;
   }
   #resume .bar {
     position: relative;
@@ -27,3 +29,15 @@
     background-color: #f2c640;
   }
   
+  #resume .resume-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #resume .resume-render {
+    padding: 3vh;
+    min-width:90vh;
+    min-height: 100vh;
+  }

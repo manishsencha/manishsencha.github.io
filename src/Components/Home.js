@@ -18,33 +18,48 @@ export default function Home() {
         <ul>
           <li>
             <Tooltip title="GitHub" placement="top" arrow>
-              <a href="https://github.com/manishsencha">
+              <a
+                href="https://github.com/manishsencha"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <GitHubIcon />
               </a>
             </Tooltip>
           </li>
           <li>
             <Tooltip title="Facebook" placement="top" arrow>
-              <a href="https://www.facebook.com/manish.sencha.0304/">
+              <a
+                href="https://www.facebook.com/manish.sencha.0304/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FacebookIcon />
               </a>
             </Tooltip>
           </li>
           <li>
             <Tooltip title="Instagram" placement="top" arrow>
-              <a href="https://www.instagram.com/__maniaxiom__/">
+              <a
+                href="https://www.instagram.com/__maniaxiom__/"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <InstagramIcon />
               </a>
             </Tooltip>
           </li>
           <li>
             <Tooltip title="Twitter" placement="top" arrow>
-              <a href="https://twitter.com/maniaxiom">
+              <a
+                href="https://twitter.com/maniaxiom"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <TwitterIcon />
               </a>
             </Tooltip>
           </li>
-          
         </ul>
       </div>
     </>
