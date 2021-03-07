@@ -9,5 +9,5 @@
   overflow-x: hidden;
 }
 a {
-  text-decoration: none;
+  text-decoration: none !important;
 }

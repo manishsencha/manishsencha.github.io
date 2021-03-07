@@ -1,5 +1,5 @@
 #projects {
-  height: 2000px;
+  
   background-color: #666666;
 }
 #projects .heading {
@@ -24,4 +24,7 @@
   height: 3px;
   width: 66px;
   background-color: #f2c640;
+}
+#projects .project-container {
+  padding: 10vh;
 }

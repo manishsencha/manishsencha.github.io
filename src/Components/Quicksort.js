@@ -13,47 +13,47 @@ const useStyles = makeStyles({
 function valuetext(value) {
   return `${value}`;
 }
+
 export default function Quicksort() {
   const classes = useStyles();
   const [val, changeVal] = useState(10);
   const [arr, setArr] = useState(
     [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
   );
-
+  
   const changevalue = (val) => {
     changeVal(val);
     setArr(
       [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
     );
+    setRes(
+      arr.map((num, idx) => {
+        return <Bar key={idx} height={num} />;
+      })
+    );
   };
-  const qsort = () => {
-    for(var i=0; i<arr.length; ++i) {
-      for (let j = 0; j < arr.length; j++) {
-        if(arr[i]-arr[j] < 0){
-          var temp = arr[i];
-          arr[i] = arr[j];
-          arr[j] = temp;
-          setArr(() => arr.map((num)=> num ))
-        } 
-      }
-    }
-  }
+
+  const [res, setRes] = useState(
+    arr.map((num, idx) => {
+      return <Bar key={idx} height={num} />;
+    })
+  );
+  const reset = () => {
+    setArr(
+      [...Array(val)].map(() => Math.floor(Math.random() * Math.floor(400)))
+    );
+    setRes(
+      arr.map((num, idx) => {
+        return <Bar key={idx} height={num} />;
+      })
+    );
+  };
+  
   return (
     <>
       <div className="controls-layout">
-        <Button variant="contained" onClick={qsort}>
-          SORT
-        </Button>
-        <Button
-          variant="contained"
-          onClick={() =>
-            setArr(
-              [...Array(val)].map(() =>
-                Math.floor(Math.random() * Math.floor(400))
-              )
-            )
-          }
-        >
+        <Button className="cst-btn" variant="contained">VISUALISE QSORT</Button>
+        <Button className="cst-btn" variant="contained" onClick={reset}>
           Reset
         </Button>
         <div className={classes.root}>
@@ -73,11 +73,7 @@ export default function Quicksort() {
           />
         </div>
       </div>
-      <div className="layout">
-        {arr.map((num, idx) => {
-          return <Bar key={idx} height={num} />;
-        })}
-      </div>
+      <div className="layout">{res}</div>
     </>
   );
 }

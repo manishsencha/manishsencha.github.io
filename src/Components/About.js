@@ -1,6 +1,9 @@
+import { Button } from "@material-ui/core";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+import CloudDownloadOutlined from "@material-ui/icons/CloudDownloadOutlined";
 import React from "react";
 import "../CSS/About.css";
+import pdf from '../assets/0801CS191048_BT_CS_Resume.pdf'
 export default function About() {
   return (
     <>
@@ -108,6 +111,16 @@ export default function About() {
                   &nbsp; Yes
                 </li>
               </ul>
+            </div>
+            <div>
+             <strong>Download Resume : </strong>
+              <a className="resume-link" href={pdf} target="_blank" rel="noreferrer">
+                <Button color="primary" size="large" variant="contained">
+                  {" "}
+                  <CloudDownloadOutlined />
+                  &nbsp; Resume
+                </Button>
+              </a>
             </div>
           </div>
         </div>

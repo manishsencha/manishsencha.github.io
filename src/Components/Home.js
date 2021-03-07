@@ -13,29 +13,38 @@ export default function Home() {
       <div id="home" className="home">
         <Cube />
         <h1>Manish Sencha</h1>
-        <h2>I am a Student,   Learner and a React Developer.</h2>
+        <h2>I am a Student, Learner and a React Developer.</h2>
         <h3>Enthusiasm drives me :)</h3>
         <ul>
           <li>
+            <Tooltip title="GitHub" placement="top" arrow>
+              <a href="https://github.com/manishsencha">
+                <GitHubIcon />
+              </a>
+            </Tooltip>
+          </li>
+          <li>
             <Tooltip title="Facebook" placement="top" arrow>
-              <FacebookIcon />
+              <a href="https://www.facebook.com/manish.sencha.0304/">
+                <FacebookIcon />
+              </a>
             </Tooltip>
           </li>
           <li>
             <Tooltip title="Instagram" placement="top" arrow>
-              <InstagramIcon />
-            </Tooltip>
-          </li>
-          <li>
-            <Tooltip title="GitHub" placement="top" arrow>
-              <GitHubIcon />
+              <a href="https://www.instagram.com/__maniaxiom__/">
+                <InstagramIcon />
+              </a>
             </Tooltip>
           </li>
           <li>
             <Tooltip title="Twitter" placement="top" arrow>
-              <TwitterIcon />
+              <a href="https://twitter.com/maniaxiom">
+                <TwitterIcon />
+              </a>
             </Tooltip>
           </li>
+          
         </ul>
       </div>
     </>

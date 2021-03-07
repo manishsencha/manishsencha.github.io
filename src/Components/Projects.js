@@ -1,6 +1,7 @@
 import React from "react";
 import "../CSS/Projects.css";
-import Quicksort from "./Quicksort";
+import Urlshortenercard from "./URLShortenerCard";
+// import Quicksort from "./Quicksort";
 
 export default function Projects() {
   return (
@@ -11,8 +12,11 @@ export default function Projects() {
           <span className="bar ">
             <span className="bar-second"></span>
           </span>
+          <div className="project-container">
+            <Urlshortenercard />
+            {/* <Quicksort /> */}
+          </div>
         </div>
-        <Quicksort />
       </section>
     </>
   );
