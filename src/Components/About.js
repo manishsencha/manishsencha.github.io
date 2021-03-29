@@ -3,7 +3,7 @@ import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import CloudDownloadOutlined from "@material-ui/icons/CloudDownloadOutlined";
 import React from "react";
 import "../CSS/About.css";
-import pdf from '../assets/0801CS191048_BT_CS_Resume.pdf'
+import pdf from "../assets/0801CS191048_BT_CS_Resume.pdf";
 export default function About() {
   return (
     <>
@@ -42,14 +42,6 @@ export default function About() {
             </p>
             <div className="details-list">
               <ul>
-                <li className="points">
-                  <ArrowForwardIosIcon
-                    fontSize="small"
-                    className="arrow-right"
-                  />
-                  <strong className="points-title">Birthday: </strong>
-                  &nbsp; 04 Oct 2001
-                </li>
                 <li className="points">
                   <ArrowForwardIosIcon
                     fontSize="small"
@@ -113,8 +105,13 @@ export default function About() {
               </ul>
             </div>
             <div>
-             <strong>Download Resume : </strong>
-              <a className="resume-link" href={pdf} target="_blank" rel="noreferrer">
+              <strong>Download Resume : </strong>
+              <a
+                className="resume-link"
+                href={pdf}
+                target="_blank"
+                rel="noreferrer"
+              >
                 <Button color="primary" size="large" variant="contained">
                   {" "}
                   <CloudDownloadOutlined />
