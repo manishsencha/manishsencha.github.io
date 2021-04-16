@@ -89,7 +89,7 @@ export default function About() {
                     className="arrow-right"
                   />
                   <strong className="points-title">Email: </strong>
-                  &nbsp; er.manish.sencha@gmail.com
+                  &nbsp; manishsencha2001@gmail.com
                 </li>
 
                 <li className="points">
