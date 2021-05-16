@@ -11,7 +11,9 @@ export default function Home() {
   return (
     <>
       <div id="home" className="home">
-        <Cube />
+        <div>
+          <Cube />
+        </div>
         <h1>Manish Sencha</h1>
         <h2>I am a Student, Learner and a React Developer.</h2>
         <h3>Enthusiasm drives me :)</h3>
