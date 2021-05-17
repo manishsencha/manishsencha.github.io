@@ -29,7 +29,7 @@ export default function Projectcard(props) {
         <Button
           href={props.link}
           target="_blank"
-          style={{ height: 50, width: 200 }}
+         
           size="small"
           variant="contained"
         >
@@ -38,7 +38,6 @@ export default function Projectcard(props) {
         <Button
           href={props.demo}
           target="_blank"
-          style={{ height: 50, width: 200 }}
           size="small"
           variant="contained"
           color="secondary"
