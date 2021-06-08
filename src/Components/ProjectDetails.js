@@ -26,5 +26,23 @@ const projectDetails = [
     description:
       "This is an online C++ compiler. Frontend for the project is developed using React and the editor used in the project is monaco editor which is same editor that powers VS Code Editor. Backend for the project is developed using Express framework. The API used in the project for compiling the code is used from https://godbolt.org/",
   },
+  {
+    id: 4,
+    link: "https://github.com/manishsencha/typing-test",
+    demo: "https://manishsencha.github.io/typing-test",
+    image: require("../Images/typingtest.png").default,
+    title: "Typing test",
+    description:
+      "This is a typing test program. The project is built using HTML, CSS, JavaScript and Bootstrap. The time to take test is 60 seconds and after completing it shows result with incorrect words, correct words and accuracy.",
+  },
+  {
+    id: 5,
+    link: "https://github.com/manishsencha/movies-search",
+    demo: "https://manishsencha.github.io/movies-search",
+    image: require("../Images/moviessearch.png").default,
+    title: "Movies search",
+    description:
+      "This is movie search webpage. The program is developed using React. The api used in the project is OmdbApi for fetching the movies.",
+  },
 ];
 export default projectDetails;
