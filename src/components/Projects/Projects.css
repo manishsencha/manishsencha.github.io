@@ -1,0 +1,116 @@
+#projects {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-top: 2px solid rgb(var(--primary-color), 0.6);
+  min-height: 100vh;
+  user-select: none;
+  -ms-user-select: none;
+  padding: 3px 2rem;
+}
+
+.projects-heading {
+  text-align: center;
+  font-size: 40px;
+  margin: 10px auto;
+}
+
+.projects-carousel-container {
+  margin-top: 20px;
+  position: relative;
+}
+
+.projects-carousel-navigation-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s ease-in;
+  margin: auto 5px;
+  color: black;
+  z-index: 11;
+  background-color: rgb(204, 204, 204, 0.2);
+  height: 50px;
+  padding: 0.25rem 0.5rem;
+  border-radius: 25px;
+  user-select: none;
+  -ms-user-select: none;
+}
+
+.projects-carousel-control-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.projects-carousel-navigation-button:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+.projects-carousel-control-left::after {
+  content: "PREVIOUS";
+}
+.projects-carousel-control-right::before {
+  content: "NEXT";
+}
+
+.projects-carousel-track-slide {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.projects-carousel-track-slide > * {
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+@media (max-width: 500px) {
+  .projects-carousel-control-left::after {
+    content: "";
+  }
+  .projects-carousel-control-right::before {
+    content: "";
+  }
+  .projects-carousel-control-left,
+  .projects-carousel-control-right {
+    opacity: 1 !important;
+  }
+}
+
+.projects-details {
+  margin: 2rem 1rem;
+  box-shadow: 0px 0px 10px 0px rgb(var(--primary-color));
+  padding: 2rem 1rem;
+}
+
+.project-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.project-description {
+  margin: 5px auto;
+}
+
+.project-target-links {
+  /* padding : 1rem 3rem; */
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 10px auto;
+}
+.project-target-link {
+  text-decoration: none;
+  background-color: rgb(78, 40, 214);
+  font-size: 20px;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.2rem;
+}
