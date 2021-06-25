@@ -109,9 +109,13 @@
 }
 .project-target-link {
   text-decoration: none;
-  background-color: rgb(78, 40, 214);
+  background-color: rgb(var(--primary-color));
   font-size: 20px;
   color: white;
   padding: 0.25rem 0.5rem;
   border-radius: 0.2rem;
+  transition: background-color 0.2s ease-in-out;
+}
+.project-target-link:hover {
+  background-color: rgb(var(--primary-color), 0.9);
 }
