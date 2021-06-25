@@ -13,6 +13,11 @@
   margin: 10px auto;
 }
 
-.MuiLinearProgress-root{
-    height: 20px !important;
+.skills-text {
+  margin: 1rem 2rem;
+  max-width: 800px;
+}
+
+.MuiLinearProgress-root {
+  height: 20px !important;
 }

@@ -70,7 +70,7 @@
   cursor: pointer;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .projects-carousel-control-left::after {
     content: "";
   }

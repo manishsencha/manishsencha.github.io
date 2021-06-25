@@ -1,5 +1,12 @@
 import React from "react";
-import { GitHub, Instagram, Facebook, Email, LinkedIn } from "@material-ui/icons";
+import {
+  GitHub,
+  Instagram,
+  Facebook,
+  Email,
+  LinkedIn,
+  Twitter,
+} from "@material-ui/icons";
 import Typewriter from "typewriter-effect";
 import "./Home.css";
 
@@ -23,11 +30,54 @@ function Home() {
         />
       </div>
       <div className="home-social-links">
-        <GitHub fontSize="large" />
-        <Instagram fontSize="large" />
-        <Facebook fontSize="large" />
-        <LinkedIn fontSize="large" />
-        <Email fontSize="large" />
+        <a
+          href="https://github.com/manishsencha"
+          target="_blank"
+          className="social-link"
+          rel="noreferrer"
+        >
+          <GitHub fontSize="large" />
+        </a>
+        <a
+          href="https://instagram.com/__maniaxiom__"
+          target="_blank"
+          className="social-link"
+          rel="noreferrer"
+        >
+          <Instagram fontSize="large" />
+        </a>
+        <a
+          href="https://facebook.com/manish.sencha.0304"
+          target="_blank"
+          className="social-link"
+          rel="noreferrer"
+        >
+          <Facebook fontSize="large" />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/manish-sencha"
+          target="_blank"
+          className="social-link"
+          rel="noreferrer"
+        >
+          <LinkedIn fontSize="large" />
+        </a>
+        <a
+          href="https://twitter.com/maniaxiom"
+          className="social-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Twitter fontSize="large" />
+        </a>
+        <a
+          href="mailto:er.manish.sencha@gmail.com"
+          className="social-link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <Email fontSize="large" />
+        </a>
       </div>
     </div>
   );

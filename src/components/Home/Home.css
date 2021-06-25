@@ -24,3 +24,13 @@
   width: 100%;
   margin: 4px auto;
 }
+
+.social-link {
+  color: inherit;
+  /* transition: color 0.5ms ease-in-out; */
+  transition-property: color;
+  transition-duration: 0.5s;
+}
+.social-link:hover {
+  color: rgb(var(--primary-color));
+}
