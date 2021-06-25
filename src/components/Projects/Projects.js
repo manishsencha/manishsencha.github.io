@@ -8,6 +8,7 @@ import {
   RadioButtonUnchecked,
 } from "@material-ui/icons";
 import projectDetails from "./projectDetails";
+
 function Projects() {
   const width = useWindowWidth() - useWindowWidth() / 20;
   const height = (3 * width) / 4;

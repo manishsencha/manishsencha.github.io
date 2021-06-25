@@ -45,3 +45,32 @@
     font-size: 13px;
   }
 }
+
+.download-resume-text {
+  font-weight: bold;
+}
+
+.download-resume-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px 10px;
+  margin: 10px 0 0 0;
+}
+
+.download-resume-link {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(var(--primary-color));
+  padding: 1rem 2rem;
+  border-radius: 2px;
+  color: white;
+  transition: background-color 0.2s ease-in-out;
+}
+.download-resume-link:hover {
+  background-color: rgb(var(--primary-color), 0.9);
+}
+.download-resume-link > * {
+  margin: auto 2px;
+}

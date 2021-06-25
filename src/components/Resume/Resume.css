@@ -16,3 +16,8 @@
   font-size: 40px;
   margin: 10px auto;
 }
+
+.resume-pdf-container {
+  box-shadow: 0px 0px 10px rgb(var(--primary-color));
+  margin-top: 20px;
+}

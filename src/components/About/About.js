@@ -1,9 +1,9 @@
 import React from "react";
-import { ArrowForwardIos } from "@material-ui/icons";
+import { CloudDownloadOutlined, ArrowForwardIos } from "@material-ui/icons";
 import "./About.css";
 import details from "./details";
 import useWindowWidth from "../../utils/windowWidth";
-
+import resumePdf from "../../assets/0801CS191048_BT_CS_Resume.pdf";
 function AboutDataObj(props) {
   return (
     <div className="about-details-card">
@@ -29,8 +29,8 @@ function About() {
       <h1 className="about-description-heading">MERN Stack Developer</h1>
       <p className="about-description-text">
         I am a tech enthusiast who loves to solve problems and learn new
-        technologies and understand their working rather than just using it. I
-        use different coding platforms{" "}
+        technologies and also understand their working rather than just using
+        it. I use different coding platforms{" "}
         <strong>(CodeChef, Codeforces, Leetcode, etc.)</strong> to enhance my
         coding skills.
       </p>
@@ -40,6 +40,13 @@ function About() {
             <AboutDataObj key={data.id} head={data.head} data={data.data} />
           );
         })}
+        <div className="download-resume-card">
+          <div className="download-resume-text">Download Resume:&nbsp;</div>
+          <a className="download-resume-link" href={resumePdf} rel="noreferrer">
+            <CloudDownloadOutlined />
+            Resume
+          </a>
+        </div>
       </div>
     </div>
   );
