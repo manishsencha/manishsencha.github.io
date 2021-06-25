@@ -1,0 +1,14 @@
+:root {
+  --primary-color: 16, 107, 243; /*rgb(16, 107, 243); */
+}
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
+.period{
+  color: rgb(var(--primary-color)) !important;
+}
