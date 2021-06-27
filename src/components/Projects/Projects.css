@@ -31,13 +31,19 @@
   transition: opacity 0.25s ease-in;
   margin: auto 5px;
   color: black;
-  z-index: 11;
+  z-index: 10;
   background-color: rgb(204, 204, 204, 0.2);
   height: 50px;
   padding: 0.25rem 0.5rem;
   border-radius: 25px;
   user-select: none;
   -ms-user-select: none;
+}
+
+.projects-carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .projects-carousel-control-container {
@@ -83,7 +89,7 @@
   }
 }
 
-.projects-details {
+.projects-details-container {
   margin: 2rem 1rem;
   box-shadow: 0px 0px 10px 0px rgb(var(--primary-color));
   padding: 2rem 1rem;

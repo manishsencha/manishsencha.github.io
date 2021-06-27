@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Projects.css";
 import useWindowWidth from "../../utils/windowWidth";
 import {
@@ -13,8 +13,7 @@ function Projects() {
   const width = useWindowWidth() - useWindowWidth() / 20;
   const height = (3 * width) / 4;
   const [slide, setSlide] = useState(0);
-  const [projectsCount] = useState(5);
-
+  const [projectsCount] = useState(projectDetails.length);
   function handlePrevious() {
     if (slide === 0) {
       return setSlide(projectsCount - 1);
@@ -27,23 +26,41 @@ function Projects() {
     }
     return setSlide((slide) => slide + 1);
   }
+  useEffect(() => {
+    const x = setInterval(() => {
+      setSlide((slide) => (slide + 1) % projectsCount);
+    }, 5000);
+    return () => clearInterval(x);
+  }, [projectsCount]);
 
   return (
     <div id="projects">
       <div className="projects-heading">Projects</div>
-      <div className="projects-carousel-container">
-        <img
-          src={require("../../Images/" + projectDetails[slide].image).default}
-          style={{
-            width: width,
-            height: height,
-            maxWidth: "1100px",
-            maxHeight: "800px",
-            position: "relative",
-          }}
-          alt={projectDetails[slide]}
-          className="projects-carousel-image"
-        />
+      <div
+        className="projects-carousel-container"
+        style={{
+          height: height,
+          width: width,
+          maxWidth: "1100px",
+          maxHeight: "800px",
+        }}
+      >
+        {projectDetails.map((data) => (
+          <img
+            key={data.title}
+            src={require("../../Images/" + data.image).default}
+            style={{
+              width: width,
+              height: height,
+              maxWidth: "1100px",
+              maxHeight: "800px",
+              opacity: data.id - slide - 1 === 0 ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+            alt={data.title}
+            className="projects-carousel-image"
+          />
+        ))}
         <div
           className="projects-carousel-control-container"
           style={{
@@ -70,70 +87,56 @@ function Projects() {
       </div>
 
       <div className="projects-carousel-track-slide">
-        {slide === 0 ? (
-          <RadioButtonChecked />
-        ) : (
-          <RadioButtonUnchecked
-            style={{ cursor: "pointer" }}
-            onClick={() => setSlide(0)}
-          />
-        )}
-        {slide === 1 ? (
-          <RadioButtonChecked />
-        ) : (
-          <RadioButtonUnchecked
-            style={{ cursor: "pointer" }}
-            onClick={() => setSlide(1)}
-          />
-        )}
-        {slide === 2 ? (
-          <RadioButtonChecked />
-        ) : (
-          <RadioButtonUnchecked
-            style={{ cursor: "pointer" }}
-            onClick={() => setSlide(2)}
-          />
-        )}
-        {slide === 3 ? (
-          <RadioButtonChecked />
-        ) : (
-          <RadioButtonUnchecked
-            style={{ cursor: "pointer" }}
-            onClick={() => setSlide(3)}
-          />
-        )}
-        {slide === 4 ? (
-          <RadioButtonChecked />
-        ) : (
-          <RadioButtonUnchecked
-            style={{ cursor: "pointer" }}
-            onClick={() => setSlide(4)}
-          />
+        {projectDetails.map((data) =>
+          data.id - 1 - slide === 0 ? (
+            <RadioButtonChecked key={data.id} />
+          ) : (
+            <RadioButtonUnchecked
+              key={data.id}
+              onClick={() => setSlide(data.id - 1)}
+              style={{ cursor: "pointer" }}
+            />
+          )
         )}
       </div>
-      <div className="projects-details">
-        <div className="project-heading">{projectDetails[slide].title}</div>
-        <div className="project-description">
-          {projectDetails[slide].description}
-        </div>
-        <div className="project-target-links">
-          <a
-            href={projectDetails[slide].github}
-            target="_blank"
-            className="project-target-link"
-            rel="noreferrer"
+      <div
+        className="projects-details-container"
+        style={{
+          width: "100%",
+          display: "block",
+        }}
+      >
+        {projectDetails.map((data) => (
+          <div
+            className="projects-details"
+            style={{
+              display: data.id - slide - 1 === 0 ? "block" : "none",
+              transition: "display 0.5s ease-in-out",
+            }}
+            key={data.id}
           >
-            GITHUB
-          </a>
-          <a
-            href={projectDetails[slide].project}
-            className="project-target-link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            DEMO
-          </a>
-        </div>
+            <div className="project-heading">{data.title}</div>
+            <div className="project-description">{data.description}</div>
+            <div className="project-target-links">
+              <a
+                href={data.github}
+                target="_blank"
+                className="project-target-link"
+                rel="noreferrer"
+              >
+                GITHUB
+              </a>
+              <a
+                href={data.project}
+                className="project-target-link"
+                target="_blank"
+                rel="noreferrer"
+              >
+                DEMO
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
