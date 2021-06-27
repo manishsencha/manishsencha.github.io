@@ -18,6 +18,10 @@ function Projects() {
   const height = (3 * width) / 4;
   const [slide, setSlide] = useState(0);
   const [projectsCount] = useState(projectDetails.length);
+
+  const [imageArray] = useState(
+    projectDetails.map((data) => "../../Images" + data.image)
+  );
   function handlePrevious() {
     if (slide === 0) {
       return setSlide(projectsCount - 1);
@@ -49,16 +53,16 @@ function Projects() {
           maxHeight: "800px",
         }}
       >
-        {projectDetails.map((data) => (
-          <Preload
-            loadingIndicator={
-              <Loader type="Bars" color="rgb(var(--primary-color))" />
-            }
-            images={[require("../../Images/" + data.image).default]}
-            autoResolveDelay={3000}
-            resolveOnError={true}
-            mountChildren={true}
-          >
+        <Preload
+          loadingIndicator={
+            <Loader type="Bars" color="rgb(var(--primary-color))" />
+          }
+          images={imageArray}
+          autoResolveDelay={3000}
+          resolveOnError={true}
+          mountChildren={true}
+        >
+          {projectDetails.map((data) => (
             <img
               key={data.title}
               src={require("../../Images/" + data.image).default}
@@ -73,8 +77,8 @@ function Projects() {
               alt={data.title}
               className="projects-carousel-image"
             />
-          </Preload>
-        ))}
+          ))}
+        </Preload>
         <div
           className="projects-carousel-control-container"
           style={{
