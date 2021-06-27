@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Preload } from "react-preload";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 import "./Projects.css";
 import useWindowWidth from "../../utils/windowWidth";
 import {
@@ -46,20 +50,30 @@ function Projects() {
         }}
       >
         {projectDetails.map((data) => (
-          <img
-            key={data.title}
-            src={require("../../Images/" + data.image).default}
-            style={{
-              width: width,
-              height: height,
-              maxWidth: "1100px",
-              maxHeight: "800px",
-              opacity: data.id - slide - 1 === 0 ? 1 : 0,
-              transition: "opacity 0.5s ease-in-out",
-            }}
-            alt={data.title}
-            className="projects-carousel-image"
-          />
+          <Preload
+            loadingIndicator={
+              <Loader type="Puff" color="rgb(var(--primary-color))" />
+            }
+            images={[require("../../Images/" + data.image).default]}
+            autoResolveDelay={3000}
+            resolveOnError={true}
+            mountChildren={true}
+          >
+            <img
+              key={data.title}
+              src={require("../../Images/" + data.image).default}
+              style={{
+                width: width,
+                height: height,
+                maxWidth: "1100px",
+                maxHeight: "800px",
+                opacity: data.id - slide - 1 === 0 ? 1 : 0,
+                transition: "opacity 0.5s ease-in-out",
+              }}
+              alt={data.title}
+              className="projects-carousel-image"
+            />
+          </Preload>
         ))}
         <div
           className="projects-carousel-control-container"

@@ -1,5 +1,8 @@
 import React from "react";
 import { CloudDownloadOutlined, ArrowForwardIos } from "@material-ui/icons";
+import { Preload } from "react-preload";
+import Loader from "react-loader-spinner";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./About.css";
 import details from "./details";
 import useWindowWidth from "../../utils/windowWidth";
@@ -15,16 +18,26 @@ function AboutDataObj(props) {
 }
 
 function About() {
-  const width = useWindowWidth();
+  const width = useWindowWidth() - useWindowWidth() / 20;
   return (
     <div id="about">
       <div className="about-heading">About</div>
       <div className="about-image-container">
-        <img
-          src={require("../../Images/myimagewhite.jpg").default}
-          alt="myimage"
-          style={{ width: width - width / 20, maxWidth: "400px" }}
-        />
+        <Preload
+          loadingIndicator={
+            <Loader type="Puff" color="rgb(var(--primary-color))" />
+          }
+          images={[require("../../Images/myimagewhite.jpg").default]}
+          autoResolveDelay={3000}
+          resolveOnError={true}
+          mountChildren={true}
+        >
+          <img
+            src={require("../../Images/myimagewhite.jpg").default}
+            alt="myimage"
+            style={{ width: width - width / 20, maxWidth: "400px" }}
+          />
+        </Preload>
       </div>
       <h1 className="about-description-heading">MERN Stack Developer</h1>
       <p className="about-description-text">
