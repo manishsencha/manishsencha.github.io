@@ -25,7 +25,7 @@ function About() {
       <div className="about-image-container">
         <Preload
           loadingIndicator={
-            <Loader type="Puff" color="rgb(var(--primary-color))" />
+            <Loader type="Bars" color="rgb(var(--primary-color))" />
           }
           images={[require("../../Images/myimagewhite.jpg").default]}
           autoResolveDelay={3000}

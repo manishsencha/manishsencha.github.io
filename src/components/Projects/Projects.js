@@ -52,7 +52,7 @@ function Projects() {
         {projectDetails.map((data) => (
           <Preload
             loadingIndicator={
-              <Loader type="Puff" color="rgb(var(--primary-color))" />
+              <Loader type="Bars" color="rgb(var(--primary-color))" />
             }
             images={[require("../../Images/" + data.image).default]}
             autoResolveDelay={3000}
