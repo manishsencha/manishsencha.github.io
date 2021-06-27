@@ -20,7 +20,7 @@ function Projects() {
   const [projectsCount] = useState(projectDetails.length);
 
   const [imageArray] = useState(
-    projectDetails.map((data) => "../../Images" + data.image)
+    projectDetails.map((data) => "../../Images/" + data.image)
   );
   function handlePrevious() {
     if (slide === 0) {
