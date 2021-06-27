@@ -1,7 +1,5 @@
 import React from "react";
 import { CloudDownloadOutlined, ArrowForwardIos } from "@material-ui/icons";
-import { Preload } from "react-preload";
-import Loader from "react-loader-spinner";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./About.css";
 import details from "./details";
@@ -23,21 +21,11 @@ function About() {
     <div id="about">
       <div className="about-heading">About</div>
       <div className="about-image-container">
-        <Preload
-          loadingIndicator={
-            <Loader type="Bars" color="rgb(var(--primary-color))" />
-          }
-          images={[require("../../Images/myimagewhite.jpg").default]}
-          autoResolveDelay={3000}
-          resolveOnError={true}
-          mountChildren={true}
-        >
-          <img
-            src={require("../../Images/myimagewhite.jpg").default}
-            alt="myimage"
-            style={{ width: width - width / 20, maxWidth: "400px" }}
-          />
-        </Preload>
+        <img
+          src={require("../../Images/myimagewhite.jpg").default}
+          alt="myimage"
+          style={{ width: width - width / 20, maxWidth: "400px" }}
+        />
       </div>
       <h1 className="about-description-heading">MERN Stack Developer</h1>
       <p className="about-description-text">

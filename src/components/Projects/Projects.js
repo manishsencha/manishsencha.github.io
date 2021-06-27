@@ -1,8 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Preload } from "react-preload";
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-
 import "./Projects.css";
 import useWindowWidth from "../../utils/windowWidth";
 import {
@@ -19,9 +15,6 @@ function Projects() {
   const [slide, setSlide] = useState(0);
   const [projectsCount] = useState(projectDetails.length);
 
-  const [imageArray] = useState(
-    projectDetails.map((data) => "../../Images/" + data.image)
-  );
   function handlePrevious() {
     if (slide === 0) {
       return setSlide(projectsCount - 1);
@@ -53,32 +46,22 @@ function Projects() {
           maxHeight: "800px",
         }}
       >
-        <Preload
-          loadingIndicator={
-            <Loader type="Bars" color="rgb(var(--primary-color))" />
-          }
-          images={imageArray}
-          autoResolveDelay={3000}
-          resolveOnError={true}
-          mountChildren={true}
-        >
-          {projectDetails.map((data) => (
-            <img
-              key={data.title}
-              src={require("../../Images/" + data.image).default}
-              style={{
-                width: width,
-                height: height,
-                maxWidth: "1100px",
-                maxHeight: "800px",
-                opacity: data.id - slide - 1 === 0 ? 1 : 0,
-                transition: "opacity 0.5s ease-in-out",
-              }}
-              alt={data.title}
-              className="projects-carousel-image"
-            />
-          ))}
-        </Preload>
+        {projectDetails.map((data) => (
+          <img
+            key={data.title}
+            src={require("../../Images/" + data.image).default}
+            style={{
+              width: width,
+              height: height,
+              maxWidth: "1100px",
+              maxHeight: "800px",
+              opacity: data.id - slide - 1 === 0 ? 1 : 0,
+              transition: "opacity 0.5s ease-in-out",
+            }}
+            alt={data.title}
+            className="projects-carousel-image"
+          />
+        ))}
         <div
           className="projects-carousel-control-container"
           style={{
