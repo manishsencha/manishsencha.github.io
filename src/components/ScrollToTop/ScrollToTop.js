@@ -2,7 +2,7 @@ import { ArrowUpward } from "@material-ui/icons";
 import React, { useEffect, useState } from "react";
 import "./ScrollToTop.css";
 function ScrollToTop() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(false);
   useEffect(() => {
     document.addEventListener("scroll", function (e) {
       if (window.pageYOffset > 300) {
