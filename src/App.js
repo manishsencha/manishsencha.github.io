@@ -35,17 +35,17 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 4000);
   });
   useEffect(() => {
     setTimeout(() => {
       setOpacity(1);
-    }, 5500);
+    }, 4500);
   });
   useEffect(() => {
     setTimeout(() => {
       document.querySelector(".my-app").style.display = "block";
-    }, 5400);
+    }, 4400);
   });
   return loading ? (
     <div

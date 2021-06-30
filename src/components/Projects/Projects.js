@@ -47,9 +47,10 @@ function Projects() {
         }}
       >
         {projectDetails.map((data) => (
+          
           <img
             key={data.title}
-            src={require("../../Images/" + data.image).default}
+            src={data.image}
             style={{
               width: width,
               height: height,

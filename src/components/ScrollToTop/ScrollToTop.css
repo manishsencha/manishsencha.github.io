@@ -4,6 +4,7 @@
   bottom: 1rem;
   color: white;
   background-color: rgb(var(--primary-color));
+  z-index: 11;
   height: 2rem;
   width: 2rem;
   padding: 1rem;
