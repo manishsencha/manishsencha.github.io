@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/static/css/main.68856cb1.chunk.css",
-    "main.js": "/static/js/main.c853ea42.chunk.js",
-    "main.js.map": "/static/js/main.c853ea42.chunk.js.map",
+    "main.js": "/static/js/main.1061ae27.chunk.js",
+    "main.js.map": "/static/js/main.1061ae27.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.d903f070.js",
     "runtime-main.js.map": "/static/js/runtime-main.d903f070.js.map",
     "static/css/2.b37225cc.chunk.css": "/static/css/2.b37225cc.chunk.css",
@@ -12,7 +12,7 @@
     "static/css/2.b37225cc.chunk.css.map": "/static/css/2.b37225cc.chunk.css.map",
     "static/css/main.68856cb1.chunk.css.map": "/static/css/main.68856cb1.chunk.css.map",
     "static/js/2.26cb2b60.chunk.js.LICENSE.txt": "/static/js/2.26cb2b60.chunk.js.LICENSE.txt",
-    "static/media/0801CS191048_BT_CS_Resume.c310b07a.pdf": "/static/media/0801CS191048_BT_CS_Resume.c310b07a.pdf",
+    "static/media/0801CS191048_BT_CS_Resume.4efeecf4.pdf": "/static/media/0801CS191048_BT_CS_Resume.4efeecf4.pdf",
     "static/media/aakhripaste.png": "/static/media/aakhripaste.63a948da.png",
     "static/media/cppcompiler.png": "/static/media/cppcompiler.3a932acd.png",
     "static/media/moviessearch.png": "/static/media/moviessearch.bd53c1eb.png",
@@ -26,6 +26,6 @@
     "static/css/2.b37225cc.chunk.css",
     "static/js/2.26cb2b60.chunk.js",
     "static/css/main.68856cb1.chunk.css",
-    "static/js/main.c853ea42.chunk.js"
+    "static/js/main.1061ae27.chunk.js"
   ]
 }
