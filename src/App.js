@@ -10,42 +10,15 @@ import Resume from "./components/Resume/Resume";
 import useWindowWidth from "./utils/windowWidth";
 import useWindowHeight from "./utils/windowHeight";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
-//  "Audio"
-//  |"BallTriangle"
-//  |"Bars"
-//  |"Circles"
-//  |"Grid"
-//  |"Hearts"
-//  |"Oval"
-//  |"Puff"
-//  |"Rings"
-//  |"TailSpin"
-//  |"ThreeDots"
-//  |"Watch"
-//  |"RevolvingDot"
-//  |"Triangle"
-//  |"Plane"
-//  |"MutatingDots"
-//  |"CradleLoader";
+
 function App() {
   const [loading, setLoading] = useState(true);
-  const [opacity, setOpacity] = useState(0);
   const width = useWindowWidth() - useWindowWidth() / 10;
   const height = useWindowHeight() - useWindowHeight() / 10;
   useEffect(() => {
-    setTimeout(() => {
+    window.onload = function () {
       setLoading(false);
-    }, 4000);
-  });
-  useEffect(() => {
-    setTimeout(() => {
-      setOpacity(1);
-    }, 4500);
-  });
-  useEffect(() => {
-    setTimeout(() => {
-      document.querySelector(".my-app").style.display = "block";
-    }, 4400);
+    }
   });
   return loading ? (
     <div
@@ -63,8 +36,6 @@ function App() {
     <div
       className="my-app"
       style={{
-        display: "none",
-        opacity: opacity,
         transition: "opacity 1s ease",
       }}
     >
