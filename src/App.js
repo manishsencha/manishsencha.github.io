@@ -17,7 +17,7 @@ function App() {
   const height = useWindowHeight() - useWindowHeight() / 10;
   useEffect(() => {
 
-    document.addEventListener('DOMContentLoaded', () => { setLoading(false) })
+    setLoading(false)
   }, []);
   return loading ? (
     <div
