@@ -7,37 +7,22 @@ import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
 import Resume from "./components/Resume/Resume";
-import useWindowWidth from "./utils/windowWidth";
-import useWindowHeight from "./utils/windowHeight";
 import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
-  const width = useWindowWidth() - useWindowWidth() / 10;
-  const height = useWindowHeight() - useWindowHeight() / 10;
+  const [display, setDisplay] = useState("flex")
   useEffect(() => {
-
-    setLoading(false)
-  }, []);
-  return loading ? (
-    <div
-      style={{
-        width: width,
-        height: height,
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
+    window.onload = function () {
+      setLoading(false);
+      setTimeout(() => { setDisplay("none") }, 100)
+    }
+  }, [])
+  return (<div className="my-app">
+    <div style={{ transition: "opacity 1s ease-in-out", position: "absolute", height: "100%", width: "100%", backgroundColor: "white", opacity: loading ? 1 : 0, display: display, justifyContent: "center", alignItems: "center" }}>
       <Loader type="Grid" color="rgb(var(--primary-color))" />
     </div>
-  ) : (
-    <div
-      className="my-app"
-      style={{
-        transition: "opacity 1s ease",
-      }}
-    >
+    <div style={{ height: loading ? 0 : "", overflow: loading ? "hidden" : "" }}>
       <Header />
       <Home />
       <About />
@@ -46,7 +31,8 @@ function App() {
       <Resume />
       <ScrollToTop />
     </div>
-  );
+  </div >
+  )
 }
 
 export default App;
