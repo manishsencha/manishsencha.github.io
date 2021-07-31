@@ -8,12 +8,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { AccountBox, Book, ChromeReaderMode, DeveloperMode, Home, Menu } from "@material-ui/icons";
-
-function scrollToElement(elementId) {
-  const elem = document.getElementById(elementId);
-  if (!elem) return window.scrollTo({ top: 0 });
-  return elem.scrollIntoView();
-}
+import scrollToElement from "../../utils/scrollToElement";
 
 function Header() {
   const width = useWindowWidth();
