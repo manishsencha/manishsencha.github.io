@@ -16,20 +16,21 @@ function App() {
       setTimeout(() => { setDisplay("none") }, 100)
     }
   }, [])
-  return (<div className="my-app">
-    <div style={{ transition: "opacity 1s ease-in-out", position: "absolute", height: "100%", width: "100%", backgroundColor: "white", opacity: loading ? 1 : 0, display: display, justifyContent: "center", alignItems: "center" }}>
-      <div className="loader">Loading....</div>
-    </div>
-    <div style={{ height: loading ? 0 : "", overflow: loading ? "hidden" : "" }}>
-      <Header />
-      <Home />
-      <About />
-      <Skills />
-      <Projects />
-      <Resume />
-      <ScrollToTop />
-    </div>
-  </div >
+  return (
+    <div className="my-app">
+      <div style={{ transition: "opacity 1s ease-in-out", position: "absolute", height: "100%", width: "100%", backgroundColor: "white", opacity: loading ? 1 : 0, display: display, justifyContent: "center", alignItems: "center" }}>
+        <div className="loader">Loading....</div>
+      </div>
+      <div style={{ height: loading ? 0 : "", overflow: loading ? "hidden" : "" }}>
+        <Header />
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Resume />
+        <ScrollToTop />
+      </div>
+    </div >
   )
 }
 

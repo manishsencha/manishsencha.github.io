@@ -22,7 +22,7 @@ function About() {
       <div className="about-heading">About</div>
       <div className="about-image-container">
         <img
-          src={require("../../Images/myimagewhite.jpg").default}
+          src={require("./Images/myimagewhite.jpg").default}
           alt="myimage"
           style={{ width: width - width / 20, maxWidth: "400px" }}
         />

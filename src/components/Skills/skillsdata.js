@@ -1,58 +1,71 @@
+import reactIcon from './Images/Icons/react-original.svg'
+import expressIcon from './Images/Icons/express-original.svg'
+import htmlIcon from './Images/Icons/html5-original.svg'
+import cssIcon from './Images/Icons/css3-original.svg'
+import javascriptIcon from './Images/Icons/javascript-original.svg'
+import bootstrapIcon from './Images/Icons/bootstrap-plain.svg'
+import cIcon from './Images/Icons/c-original.svg'
+import cppIcon from './Images/Icons/cplusplus-original.svg'
+import javaIcon from './Images/Icons/java-original.svg'
+import pythonIcon from './Images/Icons/python-original.svg'
+import ubuntuIcon from './Images/Icons/ubuntu-plain.svg'
+import nodejsIcon from './Images/Icons/nodejs-original.svg'
+import mongodbIcon from './Images/Icons/mongodb-original.svg'
+import vscodeIcon from './Images/Icons/vscode-original.svg'
 const skillData = [
   {
-    id: 1,
     name: "REACT",
-    level: 80,
+    icon: reactIcon
   },
   {
-    id: 2,
     name: "EXPRESS",
-    level: 60,
+    icon: expressIcon
+
   },
   {
-    id: 3,
+    name: "NODEJS",
+    icon: nodejsIcon
+  },
+  {
+    name: "MONGODB",
+    icon: mongodbIcon
+  },
+  {
     name: "HTML",
-    level: 80,
+    icon: htmlIcon
   },
   {
-    id: 4,
     name: "CSS",
-    level: 75,
+    icon: cssIcon
   },
   {
-    id: 5,
     name: "JAVASCRIPT",
-    level: 70,
+    icon: javascriptIcon
   },
   {
-    id: 6,
     name: "BOOTSTRAP",
-    level: 75,
+    icon: bootstrapIcon
   },
   {
-    id: 7,
     name: "C",
-    level: 80,
+    icon: cIcon
   },
   {
-    id: 8,
     name: "C++",
-    level: 80,
+    icon: cppIcon
   },
   {
-    id: 9,
     name: "JAVA",
-    level: 80,
+    icon: javaIcon
   },
   {
-    id: 10,
     name: "PYTHON",
-    level: 60,
+    icon: pythonIcon
   },
+  { name: "VSCODE", icon: vscodeIcon },
   {
-    id: 11,
     name: "UBUNTU",
-    level: 70,
+    icon: ubuntuIcon
   },
-];
-export default skillData;
+]
+export default skillData

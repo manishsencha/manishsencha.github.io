@@ -7,7 +7,7 @@ const projectDetails = [
     github: "https://github.com/manishsencha/cpp-compiler",
     project: "https://cpp-compiler.herokuapp.com/",
     image:
-      require("C:/Users/Admin/Desktop/Projects/manishsencha.github.io/src/Images/cppcompiler.png")
+      require("./Images/cppcompiler.png")
         .default,
   },
   {
@@ -18,7 +18,7 @@ const projectDetails = [
     github: "https://github.com/manishsencha/movies-search",
     project: "https://manishsencha.github.io/movies-search",
     image:
-      require("C:/Users/Admin/Desktop/Projects/manishsencha.github.io/src/Images/moviessearch.png")
+      require("./Images/moviessearch.png")
         .default,
   },
   {
@@ -29,7 +29,7 @@ const projectDetails = [
     github: "https://github.com/manishsencha/todo-app",
     project: "https://github.com/manishsencha/Todo-app",
     image:
-      require("C:/Users/Admin/Desktop/Projects/manishsencha.github.io/src/Images/todoapp.png")
+      require("./Images/todoapp.png")
         .default,
   },
   {
@@ -40,7 +40,7 @@ const projectDetails = [
     github: "https://github.com/manishsencha/typing-test",
     project: "https://github.com/manishsencha/typing-test",
     image:
-      require("C:/Users/Admin/Desktop/Projects/manishsencha.github.io/src/Images/typingtest.png")
+      require("./Images/typingtest.png")
         .default,
   },
   {
@@ -51,7 +51,7 @@ const projectDetails = [
     github: "https://github.com/manishsencha/URL-Shortener",
     project: "https://m-urlshortener.herokuapp.com/",
     image:
-      require("C:/Users/Admin/Desktop/Projects/manishsencha.github.io/src/Images/urlshortener.png")
+      require("./Images/urlshortener.png")
         .default,
   },
   {
@@ -61,7 +61,7 @@ const projectDetails = [
     github: "https://github.com/manishsencha/aakhripaste",
     project: "https://aakhripaste.herokuapp.com",
     image:
-      require("C:/Users/Admin/Desktop/Projects/manishsencha.github.io/src/Images/aakhripaste.png")
+      require("./Images/aakhripaste.png")
         .default,
   },
 ];

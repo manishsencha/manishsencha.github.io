@@ -47,3 +47,6 @@ ul {
   color: white;
   cursor: pointer;
 }
+.MuiDrawer-paper{
+  justify-content: center;
+}

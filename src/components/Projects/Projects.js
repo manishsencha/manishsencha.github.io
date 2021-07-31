@@ -46,8 +46,7 @@ function Projects() {
           maxHeight: "800px",
         }}
       >
-        {projectDetails.map((data) => (
-          
+        {projectDetails.map((data) => ( 
           <img
             key={data.title}
             src={data.image}

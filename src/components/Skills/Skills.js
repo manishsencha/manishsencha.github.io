@@ -1,24 +1,13 @@
 import React from "react";
-import { LinearProgress } from "@material-ui/core";
-import skillData from "./skillsdata";
 import "./Skills.css";
-
-function SkillMeter(props) {
+import skillData from './skillsdata'
+function SkillContainer(props) {
   return (
-    <div style={{ width: "100%", margin: "20px auto" }}>
-      <div style={{ width: "80%" }}>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            flexDirection: "row",
-          }}
-        >
-          <span>{props.name}</span>
-          <span>{props.level}%</span>
-        </div>
-        <LinearProgress variant="determinate" value={props.level} />
+    <div className="skill-container-component">
+      <div className="skill-container-component-logo">
+        <img src={props.icon} alt={props.name} height="50px" />
       </div>
+      <div className="skill-container-component-name">{props.name}</div>
     </div>
   );
 }
@@ -32,13 +21,12 @@ function Skills() {
         behind the scenes leading to better understanding of the system and
         hence improving reliability and efficiency.
       </div>
-      <div style={{ width: "90%", marginTop: "1rem" }}>
-        {skillData.map((data) => {
-          return (
-            <SkillMeter key={data.id} level={data.level} name={data.name} />
-          );
-        })}
+      <div style={{ display: "flex", justifyContent: "space-evenly", width: "100%", maxWidth: "800px", flexWrap: "wrap", overflow: "hidden" }}>
+        {skillData.map((data, idx) =>
+          <SkillContainer key={idx} name={data.name} icon={data.icon} />
+        )}
       </div>
+
     </div>
   );
 }
