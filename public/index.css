@@ -18,3 +18,12 @@ a {
 .period {
   color: rgb(var(--primary-color)) !important;
 }
+
+::-webkit-scrollbar{
+  height : 5px;
+  width : 7px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: rgb(var(--primary-color));
+  border-radius: 5px;
+}
