@@ -7,7 +7,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import { AccountBox, Book, ChromeReaderMode, DeveloperMode, Home, Menu } from "@material-ui/icons";
+import { AccountBox, ChromeReaderMode, DeveloperMode, Home, Menu } from "@material-ui/icons";
 import scrollToElement from "../../utils/scrollToElement";
 
 function Header() {
@@ -60,12 +60,6 @@ function Header() {
                   </ListItemIcon>
                   <ListItemText primary={"Projects"} />
                 </ListItem>
-                <ListItem className="sidebar-link" button component="a" href="#resume" key={"Resume"}>
-                  <ListItemIcon>
-                    <Book />
-                  </ListItemIcon>
-                  <ListItemText primary={"Resume"} />
-                </ListItem>
               </List>
             </div>
           </Drawer>
@@ -74,8 +68,9 @@ function Header() {
         <ul className="header-items">
           <li onClick={() => scrollToElement("home")}>Home </li>
           <li onClick={() => scrollToElement("about")}>About</li>
+          <li onClick={() => scrollToElement("skills")}>Skills</li>
           <li onClick={() => scrollToElement("projects")}>Projects</li>
-          <li onClick={() => scrollToElement("resume")}>Resume</li>
+
         </ul>
       )
       }

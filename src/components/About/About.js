@@ -1,10 +1,9 @@
 import React from "react";
-import { CloudDownloadOutlined, ArrowForwardIos } from "@material-ui/icons";
+import { ArrowForwardIos } from "@material-ui/icons";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "./About.css";
 import details from "./details";
 import useWindowWidth from "../../utils/windowWidth";
-import resumePdf from "../../assets/0801CS191048_BT_CS_Resume.pdf";
 function AboutDataObj(props) {
   return (
     <div className="about-details-card">
@@ -41,13 +40,7 @@ function About() {
             <AboutDataObj key={data.id} head={data.head} data={data.data} />
           );
         })}
-        <div className="download-resume-card">
-          <div className="download-resume-text">Download Resume:&nbsp;</div>
-          <a className="download-resume-link" href={resumePdf} rel="noreferrer">
-            <CloudDownloadOutlined />
-            Resume
-          </a>
-        </div>
+
       </div>
     </div>
   );

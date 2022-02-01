@@ -23,6 +23,7 @@
   },
   "homepage": "https://manishsencha.github.io",
   "scripts": {
+    "pushanddeploy":"git add . && git commit -m \"update\" && git push && npm run deploy",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
