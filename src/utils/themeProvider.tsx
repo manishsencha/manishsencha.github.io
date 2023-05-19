@@ -8,16 +8,22 @@ type ChildrenReactNode = {
   children: ReactNode;
 };
 const ThemeProvider: React.FC<ChildrenReactNode> = ({ children }) => {
-  const [isDark, setIsDark] = React.useState<boolean>(true);
+  const [isDark, setIsDark] = React.useState<boolean>(false);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
   };
   useEffect(() => {
     if (isDark) {
-      document.querySelector("html")?.classList.add("dark");
+      setTimeout(
+        () => document.querySelector("html")?.classList.add("dark"),
+        1000
+      );
     } else {
-      document.querySelector("html")?.classList.remove("dark");
+      setTimeout(
+        () => document.querySelector("html")?.classList.remove("dark"),
+        1000
+      );
     }
   }, [isDark]);
   return (
