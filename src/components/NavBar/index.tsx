@@ -21,7 +21,7 @@ function NavBar() {
           <Link
             key={route.to}
             to={route.to}
-            className="px-2"
+            className="mx-2"
             activeClassName="border-b-2 border-dark-primary dark:border-light-primary"
           >
             {route.label}

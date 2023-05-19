@@ -8,8 +8,12 @@ type LayoutProp = {
 const Layout: React.FC<LayoutProp> = ({ children }) => {
   return (
     <ThemeProvider>
-      <NavBar />
-      <main className="main-content bg-white dark:bg-black">{children}</main>
+      <div className="min-h-screen">
+        <NavBar />
+        <main className="main-content bg-light-secondary dark:bg-dark-secondary text-dark-primary dark:text-light-primary">
+          {children}
+        </main>
+      </div>
     </ThemeProvider>
   );
 };
