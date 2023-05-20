@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
-import { PageProps } from "gatsby";
+import { HeadFC, PageProps } from "gatsby";
 import About from "../components/sections/About";
 const AboutPage: React.FC<PageProps> = () => {
   return (
@@ -11,3 +11,4 @@ const AboutPage: React.FC<PageProps> = () => {
 };
 
 export default AboutPage;
+export const Head: HeadFC = () => <title>About | Manish Sencha</title>;
