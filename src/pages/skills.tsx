@@ -13,4 +13,4 @@ const SkillsPage: React.FC<PageProps> = () => {
 
 export default SkillsPage;
 
-export const Head: HeadFC = () => <title>Manish Sencha</title>;
+export const Head: HeadFC = () => <title>Skills | Manish Sencha</title>;

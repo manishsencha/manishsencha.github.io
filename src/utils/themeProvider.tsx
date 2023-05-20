@@ -1,29 +1,28 @@
-import React, { ReactNode, useEffect } from "react";
+import React, { ReactNode, useContext, useEffect } from "react";
 
 export const themeContext = React.createContext({
   isDark: true,
   toggleTheme: () => {},
 });
+export const useTheme = () => {
+  return useContext(themeContext);
+};
 type ChildrenReactNode = {
   children: ReactNode;
 };
 const ThemeProvider: React.FC<ChildrenReactNode> = ({ children }) => {
-  const [isDark, setIsDark] = React.useState<boolean>(false);
+  const [isDark, setIsDark] = React.useState<boolean>(true);
 
   const toggleTheme = () => {
     setIsDark(!isDark);
   };
   useEffect(() => {
     if (isDark) {
-      setTimeout(
-        () => document.querySelector("html")?.classList.add("dark"),
-        1000
-      );
-    } else {
-      setTimeout(
-        () => document.querySelector("html")?.classList.remove("dark"),
-        1000
-      );
+      document.querySelector("html")?.classList.add("dark");
+    }
+    else {
+      document.querySelector("html")?.classList.remove("dark");
+      
     }
   }, [isDark]);
   return (
