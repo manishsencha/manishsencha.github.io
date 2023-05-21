@@ -2,7 +2,8 @@ import React from "react";
 import Logo from "../../atomic-components/Logo";
 import { Link } from "gatsby";
 import { useTheme } from "../../../utils/themeProvider";
-import Switch from "../../atomic-components/Switch";
+import { DarkThemeIcon } from "../../atomic-components/Icons/DarkThemeIcon";
+import { LightThemeIcon } from "../../atomic-components/Icons/LightThemeIcon";
 interface Route {
   to: string;
   label?: string;
@@ -26,13 +27,32 @@ function NavBar() {
               key={route.to}
               to={route.to}
               className="mx-2"
-              activeClassName="active:scale-95 transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
+              activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
             >
               {route.label}
             </Link>
           ))}
         </div>
-        <Switch checked={isDark} toggle={toggleTheme} />
+        <div className="flex dark:hidden">
+          <button
+            type="button"
+            aria-label="Use Dark Mode"
+            onClick={() => toggleTheme()}
+            className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+          >
+            <DarkThemeIcon />
+          </button>
+        </div>
+        <div className="hidden dark:flex">
+          <button
+            type="button"
+            aria-label="Use Light Mode"
+            onClick={() => toggleTheme()}
+            className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+          >
+            <LightThemeIcon />
+          </button>
+        </div>
       </div>
     </nav>
   );
