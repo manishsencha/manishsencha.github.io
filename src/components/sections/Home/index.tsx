@@ -6,6 +6,7 @@ import {
   BsFacebook,
   BsInstagram,
 } from "react-icons/bs";
+import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
 
 interface Social {
@@ -24,6 +25,11 @@ const socials: Social[] = [
     name: "Linkedin",
     url: "https://www.linkedin.com/in/manish-sencha",
     icon: BsLinkedin,
+  },
+  {
+    name: "Mail",
+    url: "mailto:manishsencha2001@gmail.com",
+    icon: FiMail,
   },
   {
     name: "Facebook",
@@ -52,7 +58,7 @@ function Home() {
                 rel="noreferrer noopener"
                 aria-label={social.name}
                 title={social.name}
-                className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+                className="active:scale-95 transition-transform flex w-14 h-14 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
               >
                 {<social.icon className="h-10 w-10" />}
               </a>
