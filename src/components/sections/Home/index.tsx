@@ -46,7 +46,7 @@ const socials: Social[] = [
 function Home() {
   React.useEffect(() => {
     async function fetchRepos() {
-      await axios.get("/fetch_repos").then((res) => console.log(res.data));
+      await axios.get("/api/fetch_repos").then((res) => console.log(res.data));
     }
     fetchRepos();
   });
