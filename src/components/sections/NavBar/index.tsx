@@ -2,8 +2,10 @@ import React from "react";
 import Logo from "../../atomic-components/Logo";
 import { Link } from "gatsby";
 import { useTheme } from "../../../utils/themeProvider";
-import { DarkThemeIcon } from "../../atomic-components/Icons/DarkThemeIcon";
-import { LightThemeIcon } from "../../atomic-components/Icons/LightThemeIcon";
+import { IconDarkTheme } from "../../atomic-components/Icons/IconDarkTheme";
+import { IconLightTheme } from "../../atomic-components/Icons/IconLightTheme";
+import { IconHamburger } from "../../atomic-components/Icons/IconHamburger";
+import { IconClose } from "../../atomic-components/Icons/IconClose";
 interface Route {
   to: string;
   label?: string;
@@ -14,18 +16,32 @@ let routes: Route[] = [
   { to: "/projects", label: "Projects" },
 ];
 function NavBar() {
-  const { isDark, toggleTheme } = useTheme();
+  const { toggleTheme } = useTheme();
+
+  const [isOpen, setIsOpen] = React.useState(false);
   return (
     <nav className="z-50 sticky top-0 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
-      <Link to="/">
+      <div className="flex align-center">
         <button
           type="button"
-          aria-label="Home"
-          className="scale-90 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+          aria-label="Menu"
+          onClick={() => setIsOpen(!isOpen)}
+          className={`active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link ${
+            isOpen && "text-link dark:text-link-dark"
+          }`}
         >
-          <Logo />
+          {isOpen ? <IconClose /> : <IconHamburger />}
         </button>
-      </Link>
+        <Link to="/">
+          <button
+            type="button"
+            aria-label="Home"
+            className="scale-90 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+          >
+            <Logo />
+          </button>
+        </Link>
+      </div>
       <div className="flex items-center justify-evenly">
         <div className="hidden items-center justify-evenly md:flex text-base">
           {routes.map((route: Route) => (
@@ -46,7 +62,7 @@ function NavBar() {
             onClick={() => toggleTheme()}
             className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
           >
-            <DarkThemeIcon />
+            <IconDarkTheme />
           </button>
         </div>
         <div className="hidden dark:flex">
@@ -56,7 +72,7 @@ function NavBar() {
             onClick={() => toggleTheme()}
             className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
           >
-            <LightThemeIcon />
+            <IconLightTheme />
           </button>
         </div>
       </div>
