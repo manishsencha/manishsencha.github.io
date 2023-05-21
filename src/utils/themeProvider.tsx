@@ -10,8 +10,13 @@ export const useTheme = () => {
 type ChildrenReactNode = {
   children: ReactNode;
 };
+
+const isBrowser = typeof window !== "undefined";
 const ThemeProvider: React.FC<ChildrenReactNode> = ({ children }) => {
-  let localStorageTheme = localStorage.getItem("currentTheme");
+  let localStorageTheme;
+  if (isBrowser) {
+    localStorageTheme = window.localStorage.getItem("currentTheme");
+  }
 
   const [isDark, setIsDark] = React.useState<boolean>(
     localStorageTheme == "dark" ? true : false
@@ -24,20 +29,21 @@ const ThemeProvider: React.FC<ChildrenReactNode> = ({ children }) => {
     if (isDark) {
       console.log("DARK CLASS ADDED");
       document.querySelector("html")?.classList.add("dark");
-      localStorage.setItem("currentTheme", "dark");
+
+      window.localStorage.setItem("currentTheme", "dark");
       console.log("DARK SET");
       console.log(
         "SETTED THEME : ",
-        localStorage.getItem("currentTheme")
+        window.localStorage.getItem("currentTheme")
       );
     } else {
       console.log("DARK CLASS REMOVED");
       document.querySelector("html")?.classList.remove("dark");
-      localStorage.setItem("currentTheme", "light");
+      window.localStorage.setItem("currentTheme", "light");
       console.log("LIGHT SET");
       console.log(
         "SETTED THEME : ",
-        localStorage.getItem("currentTheme")
+        window.localStorage.getItem("currentTheme")
       );
     }
   }, [isDark]);
