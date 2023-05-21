@@ -2,16 +2,11 @@ import React from "react";
 
 const Logo: React.FC = ({}) => {
   return (
-    <svg
-      className="w-12 h-12"
-      viewBox="0 0 250 250"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
+    <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* <path
         d="M125 0H250V250H125V0Z"
         className="fill-secondary dark:fill-wash"
-      />
+      /> */}
       <path
         d="M125 0C141.415 1.95808e-07 157.67 3.23322 172.835 9.51506C188.001 15.7969 201.781 25.0043 213.388 36.6117C224.996 48.219 234.203 61.9989 240.485 77.1646C246.767 92.3303 250 108.585 250 125C250 141.415 246.767 157.67 240.485 172.835C234.203 188.001 224.996 201.781 213.388 213.388C201.781 224.996 188.001 234.203 172.835 240.485C157.67 246.767 141.415 250 125 250V0Z"
         className="fill-wash dark:fill-secondary"
@@ -20,7 +15,7 @@ const Logo: React.FC = ({}) => {
         d="M150 90H168.041L187.095 137.031H187.905L206.959 90H225V160H210.811V114.438H210.236L192.331 159.658H182.669L164.764 114.268H164.189V160H150V90Z"
         className="fill-secondary dark:fill-wash"
       />
-      <path d="M0 0H125V250H0V0Z" className="fill-wash dark:fill-secondary" />
+      {/* <path d="M0 0H125V250H0V0Z" className="fill-wash dark:fill-secondary" /> */}
       <path
         d="M125 250C108.585 250 92.3303 246.767 77.1646 240.485C61.9988 234.203 48.219 224.996 36.6116 213.388C25.0043 201.781 15.7969 188.001 9.51504 172.835C3.23321 157.67 -8.28402e-06 141.415 0 125C8.28405e-06 108.585 3.23324 92.3302 9.51509 77.1645C15.7969 61.9988 25.0044 48.2189 36.6117 36.6116C48.2191 25.0043 61.999 15.7968 77.1647 9.51502C92.3304 3.23319 108.585 -1.58505e-05 125 0V250Z"
         className="fill-secondary dark:fill-wash"

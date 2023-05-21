@@ -16,9 +16,15 @@ let routes: Route[] = [
 function NavBar() {
   const { isDark, toggleTheme } = useTheme();
   return (
-    <nav className="backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav">
+    <nav className="backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
       <Link to="/">
-        <Logo />
+        <button
+          type="button"
+          aria-label="Home"
+          className="scale-90 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+        >
+          <Logo />
+        </button>
       </Link>
       <div className="flex items-center justify-evenly">
         <div className="hidden items-center justify-evenly md:flex text-base">
@@ -26,7 +32,7 @@ function NavBar() {
             <Link
               key={route.to}
               to={route.to}
-              className="mx-2"
+              className="mx-2 w-full  py-1.5 px-1.5 xs:px-3 sm:px-4 "
               activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
             >
               {route.label}
