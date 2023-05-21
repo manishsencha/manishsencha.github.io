@@ -8,6 +8,7 @@ import {
 } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
+import axios from "axios";
 
 interface Social {
   name: string;
@@ -43,6 +44,12 @@ const socials: Social[] = [
   },
 ];
 function Home() {
+  React.useEffect(() => {
+    async function fetchRepos() {
+      await axios.get("/api/fetch_repos").then((res) => console.log(res.data));
+    }
+    fetchRepos();
+  });
   return (
     <div className="min-vh flex items-center justify-center">
       <div>
