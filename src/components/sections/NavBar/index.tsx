@@ -16,7 +16,7 @@ let routes: Route[] = [
 function NavBar() {
   const { isDark, toggleTheme } = useTheme();
   return (
-    <nav className="backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
+    <nav className="z-50 sticky top-0 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
       <Link to="/">
         <button
           type="button"
