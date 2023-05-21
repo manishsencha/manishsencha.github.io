@@ -34,11 +34,11 @@
   border-radius: 50px;
   position: relative;
   cursor: pointer;
-  @apply bg-dark-accent;
+  /* @apply bg-dark-accent; */
 }
 
 .toggle-switch-container input:checked + label {
-  @apply bg-light-accent;
+  /* @apply bg-light-accent; */
 }
 
 .toggle-switch-container label::after {
@@ -51,9 +51,9 @@
   top: 50%;
   transform: translateY(-50%);
   transition: left 0.3s linear;
-  @apply bg-dark-secondary;
+  /* @apply bg-dark-secondary; */
 }
 .toggle-switch-container input:checked + label::after {
-  @apply bg-light-secondary;
+  /* @apply bg-light-secondary; */
   left: calc(100% - 26px);
 }

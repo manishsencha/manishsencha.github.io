@@ -11,18 +11,34 @@ type ChildrenReactNode = {
   children: ReactNode;
 };
 const ThemeProvider: React.FC<ChildrenReactNode> = ({ children }) => {
-  const [isDark, setIsDark] = React.useState<boolean>(true);
+  let localStorageTheme = window.localStorage.getItem("currentTheme");
 
+  const [isDark, setIsDark] = React.useState<boolean>(
+    localStorageTheme == "dark" ? true : false
+  );
   const toggleTheme = () => {
-    setIsDark(!isDark);
+    setIsDark((isDark) => !isDark);
+    console.log("THEME CHANGED");
   };
   useEffect(() => {
     if (isDark) {
+      console.log("DARK CLASS ADDED");
       document.querySelector("html")?.classList.add("dark");
-    }
-    else {
+      window.localStorage.setItem("currentTheme", "dark");
+      console.log("DARK SET");
+      console.log(
+        "SETTED THEME : ",
+        window.localStorage.getItem("currentTheme")
+      );
+    } else {
+      console.log("DARK CLASS REMOVED");
       document.querySelector("html")?.classList.remove("dark");
-      
+      window.localStorage.setItem("currentTheme", "light");
+      console.log("LIGHT SET");
+      console.log(
+        "SETTED THEME : ",
+        window.localStorage.getItem("currentTheme")
+      );
     }
   }, [isDark]);
   return (
