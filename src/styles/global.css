@@ -11,7 +11,9 @@
     src: url("../assets/fonts/Source-Code-Pro-Regular.woff2") format("woff2");
   }
 }
-
+:root {
+  --nav-height: 56px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -22,5 +24,9 @@
 }
 
 .min-vh {
-  min-height: calc(100vh - 56px);
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.below-nav {
+  top: var(--nav-height);
 }

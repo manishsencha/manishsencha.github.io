@@ -19,64 +19,97 @@ function NavBar() {
   const { toggleTheme } = useTheme();
 
   const [isOpen, setIsOpen] = React.useState(false);
+
+  // Close if the width of viewport exceeds the desired value
+  React.useEffect(() => {
+    const media = window.matchMedia(`(max-width: 768px)`);
+
+    function closeIfNeeded() {
+      if (!media.matches) {
+        setIsOpen(false);
+      }
+    }
+
+    closeIfNeeded();
+    media.addEventListener("change", closeIfNeeded);
+    return () => {
+      media.removeEventListener("change", closeIfNeeded);
+    };
+  }, []);
   return (
-    <nav className="z-50 sticky top-0 backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 items-center w-full flex justify-between bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
-      <div className="flex align-center">
-        <button
-          type="button"
-          aria-label="Menu"
-          onClick={() => setIsOpen(!isOpen)}
-          className={`active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link ${
-            isOpen && "text-link dark:text-link-dark"
-          }`}
-        >
-          {isOpen ? <IconClose /> : <IconHamburger />}
-        </button>
-        <Link to="/">
+    <div className="z-50 sticky top-0 flex flex-col">
+      <nav className="items-center w-full flex justify-between backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
+        <div className="flex align-center">
           <button
             type="button"
-            aria-label="Home"
-            className="scale-90 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+            aria-label="Menu"
+            onClick={() => setIsOpen(!isOpen)}
+            className={`active:scale-95 transition-transform flex md:hidden w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link ${
+              isOpen && "text-link dark:text-link-dark"
+            }`}
           >
-            <Logo />
+            {isOpen ? <IconClose /> : <IconHamburger />}
           </button>
-        </Link>
-      </div>
-      <div className="flex items-center justify-evenly">
-        <div className="hidden items-center justify-evenly md:flex text-base">
+          <Link to="/">
+            <button
+              type="button"
+              aria-label="Home"
+              className="active:scale-95 scale-90 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+            >
+              <Logo />
+            </button>
+          </Link>
+        </div>
+        <div className="flex items-center justify-evenly">
+          <div className="hidden items-center justify-evenly md:flex text-base">
+            {routes.map((route: Route) => (
+              <Link
+                key={route.to}
+                to={route.to}
+                className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full"
+                activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
+              >
+                {route.label}
+              </Link>
+            ))}
+          </div>
+          <div className="flex dark:hidden">
+            <button
+              type="button"
+              aria-label="Use Dark Mode"
+              onClick={() => toggleTheme()}
+              className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+            >
+              <IconDarkTheme />
+            </button>
+          </div>
+          <div className="hidden dark:flex">
+            <button
+              type="button"
+              aria-label="Use Light Mode"
+              onClick={() => toggleTheme()}
+              className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+            >
+              <IconLightTheme />
+            </button>
+          </div>
+        </div>
+      </nav>
+      {isOpen && (
+        <div className="flex md:hidden justify-between align-center text-base pt-2 text-center fixed below-nav w-full bg-primary">
           {routes.map((route: Route) => (
             <Link
               key={route.to}
               to={route.to}
-              className="mx-2 w-full  py-1.5 px-1.5 xs:px-3 sm:px-4 "
+              className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full"
               activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
             >
               {route.label}
             </Link>
           ))}
         </div>
-        <div className="flex dark:hidden">
-          <button
-            type="button"
-            aria-label="Use Dark Mode"
-            onClick={() => toggleTheme()}
-            className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
-          >
-            <IconDarkTheme />
-          </button>
-        </div>
-        <div className="hidden dark:flex">
-          <button
-            type="button"
-            aria-label="Use Light Mode"
-            onClick={() => toggleTheme()}
-            className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
-          >
-            <IconLightTheme />
-          </button>
-        </div>
-      </div>
-    </nav>
+      )}
+    </div>
   );
 }
 
