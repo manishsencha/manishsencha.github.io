@@ -48,7 +48,11 @@ function Home() {
     async function fetchRepos() {
       try {
         await axios
-          .get("/api/fetch_repos")
+          .get("https://api.github.com/users/manishsencha/repos?per_page=1000", {
+            headers: {
+              "X-GitHub-Api-Version": "2022-11-28",
+            },
+          })
           .then((res) => console.log(res.data));
       } catch (e) {
         console.log("ERROR : ", e);

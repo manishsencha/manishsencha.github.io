@@ -66,7 +66,7 @@ function NavBar() {
               <Link
                 key={route.to}
                 to={route.to}
-                className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full"
+                className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full hover:text-secondary-dark"
                 activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
               >
                 {route.label}
@@ -96,12 +96,12 @@ function NavBar() {
         </div>
       </nav>
       {isOpen && (
-        <div className="flex md:hidden justify-between align-center text-base pt-2 text-center fixed below-nav w-full bg-primary">
+        <div className="flex md:hidden justify-between align-center text-base pt-2 text-center fixed below-nav w-full backdrop-filter backdrop-blur-lg backdrop-saturate-200 transition-shadow bg-opacity-90 bg-wash dark:bg-wash-dark dark:bg-opacity-95 px-1.5 lg:pr-5 lg:pl-4 z-50 dark:shadow-nav-dark shadow-nav py-1">
           {routes.map((route: Route) => (
             <Link
               key={route.to}
               to={route.to}
-              className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full"
+              className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full hover:text-secondary-dark"
               activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
             >
               {route.label}
