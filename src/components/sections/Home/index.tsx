@@ -8,7 +8,6 @@ import {
 } from "react-icons/bs";
 import { FiMail } from "react-icons/fi";
 import { IconType } from "react-icons";
-import axios from "axios";
 
 interface Social {
   name: string;
@@ -44,22 +43,6 @@ const socials: Social[] = [
   },
 ];
 function Home() {
-  React.useEffect(() => {
-    async function fetchRepos() {
-      try {
-        await axios
-          .get("https://api.github.com/users/manishsencha/repos?per_page=1000", {
-            headers: {
-              "X-GitHub-Api-Version": "2022-11-28",
-            },
-          })
-          .then((res) => console.log(res.data));
-      } catch (e) {
-        console.log("ERROR : ", e);
-      }
-    }
-    fetchRepos();
-  });
   return (
     <div className="min-vh flex items-center justify-center">
       <div>

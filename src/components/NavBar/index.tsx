@@ -1,11 +1,11 @@
 import React from "react";
-import Logo from "../../atomic-components/Logo";
+import Logo from "../atomic-components/Logo";
 import { Link } from "gatsby";
-import { useTheme } from "../../../utils/themeProvider";
-import { IconDarkTheme } from "../../atomic-components/Icons/IconDarkTheme";
-import { IconLightTheme } from "../../atomic-components/Icons/IconLightTheme";
-import { IconHamburger } from "../../atomic-components/Icons/IconHamburger";
-import { IconClose } from "../../atomic-components/Icons/IconClose";
+import { useTheme } from "../../utils/themeProvider";
+import { IconDarkTheme } from "../atomic-components/Icons/IconDarkTheme";
+import { IconLightTheme } from "../atomic-components/Icons/IconLightTheme";
+import { IconHamburger } from "../atomic-components/Icons/IconHamburger";
+import { IconClose } from "../atomic-components/Icons/IconClose";
 interface Route {
   to: string;
   label?: string;
@@ -66,8 +66,8 @@ function NavBar() {
               <Link
                 key={route.to}
                 to={route.to}
-                className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full hover:text-secondary-dark"
-                activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
+                className="mx-2 transition-transform w-full text-center w-full py-1.5 px-1.5 xs:px-3 sm:px-4 py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize hover:bg-primary/5 hover:dark:bg-primary-dark/5 active:scale-95"
+                activeClassName="outline-link bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
               >
                 {route.label}
               </Link>
@@ -78,7 +78,7 @@ function NavBar() {
               type="button"
               aria-label="Use Dark Mode"
               onClick={() => toggleTheme()}
-              className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+              className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
             >
               <IconDarkTheme />
             </button>
@@ -88,7 +88,7 @@ function NavBar() {
               type="button"
               aria-label="Use Light Mode"
               onClick={() => toggleTheme()}
-              className="transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
+              className=" active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link"
             >
               <IconLightTheme />
             </button>
@@ -101,7 +101,7 @@ function NavBar() {
             <Link
               key={route.to}
               to={route.to}
-              className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full hover:text-secondary-dark"
+              className="mx-2 w-full py-1.5 px-1.5 xs:px-3 sm:px-4 hover:bg-secondary hover:rounded-full hover:text-secondary-dark active:scale-95"
               activeClassName="transition-transform w-full text-center outline-link py-1.5 px-1.5 xs:px-3 sm:px-4 rounded-full capitalize bg-highlight dark:bg-highlight-dark text-link dark:text-link-dark"
             >
               {route.label}

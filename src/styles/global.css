@@ -14,6 +14,7 @@
 :root {
   --nav-height: 56px;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -29,4 +30,11 @@
 
 .below-nav {
   top: var(--nav-height);
+}
+.dark .toaster-progress {
+  background: theme("colors.primary-dark") !important;
+}
+
+.toaster-progress {
+  background: theme("colors.primary") !important;
 }
