@@ -51,7 +51,7 @@ const Projects = () => {
         PROJECTS
       </h1>
       <div className="mx-auto">
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-1 gap-4 items-stretch items-center">
+        <div className="flex align-center flex-wrap justify-evenly">
           {repos.map((repo: RepoResponse) => (
             <ProjectCard
               key={repo.id}

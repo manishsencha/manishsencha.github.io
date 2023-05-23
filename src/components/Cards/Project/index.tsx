@@ -22,7 +22,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
     fetchRepoConfig();
   }, []);
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg bg-card dark:bg-card-dark shadow-inner-border dark:shadow-inner-border-dark">
+    <div className="rounded overflow-hidden shadow-lg bg-card dark:bg-card-dark shadow-inner-border dark:shadow-inner-border-dark w-56">
       <StaticImage
         src="../../../images/project_placeholder.PNG"
         alt={title}
@@ -30,9 +30,9 @@ const ProjectCard: React.FC<ProjectProps> = ({
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl mb-2">{title}</div>
-        <p className="text-gray-700 text-base">{description}</p>
+        <p className="text-base">{description}</p>
       </div>
-      <div className="px-6 pt-4 pb-2">
+      {/* <div className="px-6 pt-4 pb-2">
         {tags.map((tag: string, index: number) => (
           <span
             key={tag + index}
@@ -41,7 +41,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
             {tag}
           </span>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 };
