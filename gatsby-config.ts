@@ -17,6 +17,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-minify`,
+    `gatsby-plugin-no-sourcemaps`
   ]
 };
 

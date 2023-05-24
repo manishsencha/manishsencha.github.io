@@ -5123,6 +5123,13 @@ gatsby-plugin-minify@^0.5.0:
     fast-glob "^3.2.11"
     html-minifier-terser "^7.0.0-alpha.2"
 
+gatsby-plugin-no-sourcemaps@^5.10.0:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-no-sourcemaps/-/gatsby-plugin-no-sourcemaps-5.10.0.tgz#2a29ba50f9403794b827f1c4476469957caed4aa"
+  integrity sha512-u7SzFl3M79E7qjvxwseDA592764NeGQmBqalV0CPS3Tl4LlzW3G3OwLZNP5x34J90GbhFZU3lEPZCxh3YYc5/A==
+  dependencies:
+    "@babel/runtime" "^7.20.13"
+
 gatsby-plugin-page-creator@^5.10.0:
   version "5.10.0"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-5.10.0.tgz#bbbc2be56784e7f0e512dee5428ab6f299ef8084"
