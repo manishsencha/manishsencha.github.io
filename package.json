@@ -19,6 +19,7 @@
     "axios": "^1.4.0",
     "gatsby": "^5.9.1",
     "gatsby-plugin-image": "^3.10.0",
+    "gatsby-plugin-minify": "^0.5.0",
     "gatsby-plugin-postcss": "^6.10.0",
     "gatsby-plugin-sharp": "^5.10.0",
     "gatsby-source-filesystem": "^5.10.0",
