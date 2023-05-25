@@ -28,9 +28,9 @@ const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   const [webConf, setWebConf] = React.useState<WebConf>({});
   return (
-    <div className="w-full p-4 mt-4 mb-4 flex flex-row shadow-inner-border dark:shadow-inner-border-dark justify-between items-center bg-card dark:bg-card-dark rounded-2xl mx-2 container">
+    <div className="w-full p-4 mt-4 mb-4 flex flex-row shadow-inner-border dark:shadow-inner-border-dark justify-between items-center bg-card dark:bg-card-dark rounded-2xl mx-2 container overflow-hidden">
       <div className="flex-col">
-        <h3 className="text-primary font-display dark:text-primary-dark font-bold text-2xl leading-tight break-words uppercase">
+        <h3 className="inline-block text-primary font-display dark:text-primary-dark font-bold text-2xl leading-tight break-all uppercase ">
           {title}
         </h3>
         <div className="relative">
