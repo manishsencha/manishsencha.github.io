@@ -38,3 +38,11 @@
 .toaster-progress {
   background: theme("colors.primary") !important;
 }
+
+.dark .loading-spinner span {
+  border-color: theme("colors.primary-dark") !important;
+}
+
+.loading-spinner span {
+  border-color: theme("colors.primary") !important;
+}
