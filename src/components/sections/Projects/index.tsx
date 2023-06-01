@@ -69,7 +69,7 @@ const Projects = () => {
     setRefresh(Math.floor(Math.random() * 1000000 + 1));
   }
   return !loading ? (
-    <div className="mt-2">
+    <div className="mt-2 container mx-auto">
       <h1 className="mdx-heading text-primary dark:text-primary-dark -mx-.5 break-words text-5xl font-display font-bold leading-tight flex justify-between align-center px-3">
         <>PROJECTS</>
         <button
