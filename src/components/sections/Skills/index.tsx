@@ -56,7 +56,7 @@ const Skills = () => {
       <div className="flex flex-row justify-evenly flex-wrap">
         {skills.map((skill: Skill) => (
           <div
-            className="flex flex-col items-center m-2 p-3 w-28 shadow-inner-border dark:shadow-inner-border-dark bg-card dark:bg-card-dark rounded-2xl"
+            className="flex flex-col items-center m-2 p-3 w-32 shadow-inner-border dark:shadow-inner-border-dark bg-card dark:bg-card-dark rounded-2xl"
             key={skill.langCd}
           >
             <div className="p-2">
