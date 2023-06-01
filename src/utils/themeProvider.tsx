@@ -27,24 +27,11 @@ const ThemeProvider: React.FC<ChildrenReactNode> = ({ children }) => {
   };
   useEffect(() => {
     if (isDark) {
-      console.log("DARK CLASS ADDED");
       document.querySelector("html")?.classList.add("dark");
-
       window.localStorage.setItem("currentTheme", "dark");
-      console.log("DARK SET");
-      console.log(
-        "SETTED THEME : ",
-        window.localStorage.getItem("currentTheme")
-      );
     } else {
-      console.log("DARK CLASS REMOVED");
       document.querySelector("html")?.classList.remove("dark");
       window.localStorage.setItem("currentTheme", "light");
-      console.log("LIGHT SET");
-      console.log(
-        "SETTED THEME : ",
-        window.localStorage.getItem("currentTheme")
-      );
     }
   }, [isDark]);
   return (
