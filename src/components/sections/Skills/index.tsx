@@ -2,6 +2,7 @@ import React from "react";
 import { IconType } from "react-icons";
 import { TbBrandCpp, TbBrandReact } from "react-icons/tb";
 import { DiJava } from "react-icons/di";
+import {BsCode} from 'react-icons/bs'
 import {
   SiExpress,
   SiJavascript,
@@ -27,7 +28,7 @@ interface Skill {
 }
 
 const skills: Skill[] = [
-  { langCd: "c", langNm: "C", icon: TbBrandReact },
+  { langCd: "c", langNm: "C", icon: BsCode },
   { langCd: "cpp", langNm: "C++", icon: TbBrandCpp },
   { langCd: "java", langNm: "Java", icon: DiJava },
   { langCd: "js", langNm: "Javascript", icon: SiJavascript },
